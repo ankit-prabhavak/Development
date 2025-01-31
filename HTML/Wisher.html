@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Thoughts - Greeting</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Georgia', serif;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .greeting-card {
+            background-color: #fff8e1;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .greeting-card h1 {
+            color: #5d4037;
+            font-size: 3em;
+        }
+
+        .greeting-card p {
+            color: #8d6e63;
+            font-size: 1.2em;
+        }
+
+        .btn-custom {
+            background-color: #8d6e63;
+            color: white;
+            border-radius: 20px;
+        }
+
+        .btn-custom:hover {
+            background-color: #5d4037;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #fff8e1;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container text-center">
+        <div class="greeting-card">
+            <h1 id="greeting-message">Welcome to Your New Thought of the Day!</h1>
+            <p id="thought-message"></p>
+            <button id="new-thought-btn" class="btn btn-custom">Get a New Thought</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Your Thoughtful Website</p>
+    </div>
+
+    <script>
+        // Array of new thoughts
+        const thoughts = [
+            "The only way to do great work is to love what you do.",
+            "Believe you can and you're halfway there.",
+            "Success is not the key to happiness. Happiness is the key to success.",
+            "What you get by achieving your goals is not as important as what you become by achieving your goals.",
+            "Do not wait to strike till the iron is hot, but make it hot by striking.",
+            "A journey of a thousand miles begins with a single step.",
+            "Life is what happens when you're busy making other plans.",
+            "Be yourself; everyone else is already taken."
+        ];
+
+        // Function to change the thought
+        function getNewThought() {
+            // Randomly pick a thought
+            const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)];
+            // Display the thought
+            document.getElementById("thought-message").textContent = randomThought;
+        }
+
+        // Initial thought when the page loads
+        window.onload = getNewThought;
+
+        // Button click to get a new thought
+        document.getElementById("new-thought-btn").addEventListener("click", getNewThought);
+    </script>
+
+    <!-- Bootstrap JS and dependencies (for future functionality if needed) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
