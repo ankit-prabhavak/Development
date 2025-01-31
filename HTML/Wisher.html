@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Thoughts - Greeting</title>
+    <title>New Thought - Motivational Quotes</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         body {
-            background-color: #f0f8ff;
+            background-color: #f7f1e1;
             font-family: 'Georgia', serif;
         }
 
@@ -19,30 +19,34 @@
         }
 
         .greeting-card {
-            background-color: #fff8e1;
+            background-color: #fff5e1;
             border-radius: 15px;
             padding: 40px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .greeting-card h1 {
-            color: #5d4037;
+            color: #6b4f1f;
             font-size: 3em;
         }
 
         .greeting-card p {
-            color: #8d6e63;
-            font-size: 1.2em;
+            color: #4e3629;
+            font-size: 2em;
+            font-style: italic;
+            font-weight: 600;
+            text-align: center;
         }
 
         .btn-custom {
-            background-color: #8d6e63;
+            background-color: #6b4f1f;
             color: white;
             border-radius: 20px;
+            font-size: 1.2em;
         }
 
         .btn-custom:hover {
-            background-color: #5d4037;
+            background-color: #4e3629;
         }
 
         .footer {
@@ -50,10 +54,20 @@
             bottom: 0;
             width: 100%;
             text-align: center;
-            background-color: #fff8e1;
+            background-color: #fff5e1;
             padding: 10px;
             font-size: 0.9em;
+            color: #4e3629;
         }
+
+        .quote {
+            font-size: 2.5em;
+            font-family: 'Georgia', serif;
+            color: #3e2723;
+            text-align: center;
+            margin-top: 40px;
+        }
+
     </style>
 </head>
 
@@ -61,48 +75,49 @@
 
     <div class="container text-center">
         <div class="greeting-card">
-            <h1 id="greeting-message">Welcome to Your New Thought of the Day!</h1>
-            <p id="thought-message"></p>
+            <h1>Motivational Thought of the Day</h1>
+            <p id="thought-message" class="quote">Loading new thought...</p>
             <button id="new-thought-btn" class="btn btn-custom">Get a New Thought</button>
         </div>
     </div>
 
     <div class="footer">
-        <p>&copy; 2025 Your Thoughtful Website</p>
+        <p>&copy; 2025 Your Motivational Website</p>
     </div>
 
     <script>
-        // Array of new thoughts
-        const thoughts = [
-            "The only way to do great work is to love what you do.",
-            "Believe you can and you're halfway there.",
-            "Success is not the key to happiness. Happiness is the key to success.",
-            "What you get by achieving your goals is not as important as what you become by achieving your goals.",
-            "Do not wait to strike till the iron is hot, but make it hot by striking.",
-            "A journey of a thousand miles begins with a single step.",
-            "Life is what happens when you're busy making other plans.",
-            "Be yourself; everyone else is already taken."
-        ];
-
-        // Function to change the thought
+        // Function to fetch new thought from API and update the page
         function getNewThought() {
-            // Randomly pick a thought
-            const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)];
-            // Display the thought
-            document.getElementById("thought-message").textContent = randomThought;
+            const url = "https://zenquotes.io/api/random"; // ZenQuotes API URL
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    // Get the quote text from the API response
+                    const quote = data[0].q;
+                    const author = data[0].a;
+
+                    // Update the page with the new quote
+                    document.getElementById("thought-message").innerHTML = `"${quote}" <br> - ${author}`;
+                })
+                .catch(error => {
+                    // In case of error, show a fallback message
+                    document.getElementById("thought-message").innerHTML = "Oops! Something went wrong.";
+                });
         }
 
-        // Initial thought when the page loads
+        // Call function to display a quote on page load
         window.onload = getNewThought;
 
-        // Button click to get a new thought
+        // Add event listener to the button to fetch a new thought on click
         document.getElementById("new-thought-btn").addEventListener("click", getNewThought);
     </script>
 
-    <!-- Bootstrap JS and dependencies (for future functionality if needed) -->
+    <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
