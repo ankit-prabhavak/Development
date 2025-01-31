@@ -4,194 +4,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start Your Day with Motivation</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Professional Website</title>
     
-    <!-- Google Font: Cosmic Sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Cosmic+Sans&display=swap" rel="stylesheet">
+    <!-- Google Font: Poppins for Clean Design -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS for Layout & Responsiveness -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* General body styling */
+        /* General styling for body */
         body {
-            background: linear-gradient(135deg, #c7f7b7, #f3d7a6); /* Natural light colors */
-            font-family: 'Cosmic Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f9; /* Light background color */
         }
 
-        /* Main container */
-        .container {
-            margin-top: 50px;
+        /* Header navigation bar */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            background-color: #ff5733; /* Accent color for hover */
+            border-radius: 5px;
+        }
+
+        /* Main section styling */
+        .main-section {
+            background: linear-gradient(135deg, #ffffff, #f0f8ff);
+            padding: 100px 0;
             text-align: center;
         }
 
-        /* Greeting section */
-        .greeting-section {
-            background-color: #ffffff;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
+        .main-section h1 {
+            font-size: 3em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .main-section p {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 20px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* Welcome text */
-        .greeting-section h1 {
-            font-size: 2.5em;
-            color: #4b9a4d; /* Natural green */
-            margin-bottom: 20px;
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #fff;
         }
 
-        .greeting-section p {
-            font-size: 1.5em;
-            color: #4b9a4d; /* Natural green */
-            font-style: italic;
+        .feature-card {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
         }
 
-        /* Thought and image section */
-        .thought-section {
-            position: relative;
-            background: url('https://www.w3schools.com/w3images/forest.jpg') no-repeat center center;
-            background-size: cover;
-            border-radius: 15px;
-            padding: 80px 40px;
-            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 50px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
         }
 
-        /* Thought content */
-        .thought-section h2 {
-            font-size: 2.2em;
-            margin-bottom: 20px;
-        }
-
-        .thought-section p {
-            font-size: 1.5em;
-            font-style: italic;
-            line-height: 1.5;
-        }
-
-        /* Overlay for better text readability */
-        .thought-overlay {
-            background-color: rgba(0, 0, 0, 0.6); /* Transparent black overlay */
-            padding: 40px;
+        .feature-card img {
+            max-width: 100%;
+            height: auto;
             border-radius: 10px;
         }
 
-        /* Button styling */
-        .btn-custom {
-            background: linear-gradient(135deg, #ff7f50, #ff6347);
-            color: white;
-            padding: 15px 35px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.2em;
-            margin-top: 30px;
+        .feature-card h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin-top: 15px;
         }
 
-        .btn-custom:hover {
-            background: linear-gradient(135deg, #ff6347, #ff4500);
-            cursor: pointer;
-        }
-
-        /* Footer styling */
-        .footer {
-            position: relative;
-            background-color: #4b9a4d; /* Natural green */
-            color: white;
-            padding: 8px 15px;
-            text-align: center;
+        .feature-card p {
             font-size: 1em;
-            margin-top: 30px;
+            color: #777;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        footer a:hover {
+            color: #ff5733;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .greeting-section h1 {
-                font-size: 2em;
+            .main-section h1 {
+                font-size: 2.5em;
             }
 
-            .thought-section h2 {
-                font-size: 1.8em;
+            .main-section p {
+                font-size: 1.1em;
             }
 
-            .thought-section p {
-                font-size: 1.3em;
+            .feature-card {
+                margin-bottom: 30px;
             }
         }
-
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <!-- Greeting Section -->
-        <div class="greeting-section">
-            <h1>Welcome, Ankit!</h1>
-            <p>Start your day with this motivational thought:</p>
-        </div>
-
-        <!-- Thought of the Day Section -->
-        <div class="thought-section">
-            <div class="thought-overlay">
-                <h2>"The only way to do great work is to love what you do." – Steve Jobs</h2>
-                <p>This thought inspires us to follow our passion and make every task an enjoyable experience.</p>
+    <!-- Header with Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
 
-        <!-- Button to get another thought -->
-        <button class="btn btn-custom" onclick="changeThought()">Get a New Thought</button>
+    <!-- Main Section with Introductory Text -->
+    <div class="main-section">
+        <h1>Welcome to My Professional Website</h1>
+        <p>
+            This is where your creativity and innovation meet technology. Explore the features I have to offer and let’s
+            create something amazing together.
+        </p>
+    </div>
 
-        <!-- Footer -->
-        <div class="footer">
-            <p>&copy; 2025 Motivational Quotes - All Rights Reserved</p>
+    <!-- Features Section -->
+    <div id="features" class="features">
+        <div class="container">
+            <h2 class="mb-5">What I Offer</h2>
+            <div class="row">
+                <!-- Feature Card 1 -->
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Service 1">
+                        <h3>Web Development</h3>
+                        <p>Building responsive, user-friendly websites tailored to your business needs.</p>
+                    </div>
+                </div>
+                <!-- Feature Card 2 -->
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Service 2">
+                        <h3>UI/UX Design</h3>
+                        <p>Designing intuitive, clean, and visually appealing user interfaces and experiences.</p>
+                    </div>
+                </div>
+                <!-- Feature Card 3 -->
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Service 3">
+                        <h3>SEO Optimization</h3>
+                        <p>Improving your website’s visibility and search engine ranking to drive more traffic.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script>
-        // Array of thoughts
-        const thoughts = [
-            {
-                quote: "The only way to do great work is to love what you do.",
-                author: "Steve Jobs",
-                imageUrl: "https://www.w3schools.com/w3images/forest.jpg", // Image related to passion and work
-                description: "This thought inspires us to follow our passion and make every task an enjoyable experience."
-            },
-            {
-                quote: "Believe in yourself and all that you are.",
-                author: "Christian D. Larson",
-                imageUrl: "https://www.w3schools.com/w3images/mountains.jpg", // Image related to belief
-                description: "Self-belief is the key to achieving anything you set your mind to."
-            },
-            {
-                quote: "Success is not the key to happiness. Happiness is the key to success.",
-                author: "Albert Schweitzer",
-                imageUrl: "https://www.w3schools.com/w3images/snow.jpg", // Image related to happiness and success
-                description: "True success comes when you are happy with what you're doing."
-            }
-        ];
+    <!-- Footer Section -->
+    <footer id="contact">
+        <p>&copy; 2025 My Portfolio. All Rights Reserved. | <a href="mailto:contact@portfolio.com">Contact Me</a></p>
+    </footer>
 
-        // Function to change the thought on button click
-        function changeThought() {
-            const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)];
-
-            // Update thought of the day with a random quote and image
-            document.querySelector(".thought-section h2").innerHTML = `"${randomThought.quote}" – ${randomThought.author}`;
-            document.querySelector(".thought-section p").innerHTML = randomThought.description;
-            document.querySelector(".thought-section").style.backgroundImage = `url('${randomThought.imageUrl}')`;
-        }
-    </script>
-
-    <!-- Bootstrap JS and dependencies -->
+    <!-- Bootstrap JS & dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
