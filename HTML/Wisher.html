@@ -4,68 +4,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Thought - Motivational Quotes</title>
+    <title>Start Your Day with Motivation</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Font: Cosmic Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Cosmic+Sans&display=swap" rel="stylesheet">
 
     <style>
+        /* General body styling */
         body {
-            background-color: #f7f1e1;
-            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #c7f7b7, #f3d7a6); /* Natural light colors */
+            font-family: 'Cosmic Sans', sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
+        /* Main container */
         .container {
-            margin-top: 100px;
-        }
-
-        .greeting-card {
-            background-color: #fff5e1;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .greeting-card h1 {
-            color: #6b4f1f;
-            font-size: 3em;
-        }
-
-        .greeting-card p {
-            color: #4e3629;
-            font-size: 2em;
-            font-style: italic;
-            font-weight: 600;
+            margin-top: 50px;
             text-align: center;
         }
 
-        .btn-custom {
-            background-color: #6b4f1f;
+        /* Greeting section */
+        .greeting-section {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Welcome text */
+        .greeting-section h1 {
+            font-size: 2.5em;
+            color: #4b9a4d; /* Natural green */
+            margin-bottom: 20px;
+        }
+
+        .greeting-section p {
+            font-size: 1.5em;
+            color: #4b9a4d; /* Natural green */
+            font-style: italic;
+        }
+
+        /* Thought and image section */
+        .thought-section {
+            position: relative;
+            background: url('https://www.w3schools.com/w3images/forest.jpg') no-repeat center center;
+            background-size: cover;
+            border-radius: 15px;
+            padding: 80px 40px;
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
             color: white;
-            border-radius: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Thought content */
+        .thought-section h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+
+        .thought-section p {
+            font-size: 1.5em;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Overlay for better text readability */
+        .thought-overlay {
+            background-color: rgba(0, 0, 0, 0.6); /* Transparent black overlay */
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        /* Button styling */
+        .btn-custom {
+            background: linear-gradient(135deg, #ff7f50, #ff6347);
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
             font-size: 1.2em;
+            margin-top: 30px;
         }
 
         .btn-custom:hover {
-            background-color: #4e3629;
+            background: linear-gradient(135deg, #ff6347, #ff4500);
+            cursor: pointer;
         }
 
+        /* Footer styling */
         .footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            position: relative;
+            background-color: #4b9a4d; /* Natural green */
+            color: white;
+            padding: 8px 15px;
             text-align: center;
-            background-color: #fff5e1;
-            padding: 10px;
-            font-size: 0.9em;
-            color: #4e3629;
+            font-size: 1em;
+            margin-top: 30px;
         }
 
-        .quote {
-            font-size: 2.5em;
-            font-family: 'Georgia', serif;
-            color: #3e2723;
-            text-align: center;
-            margin-top: 40px;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .greeting-section h1 {
+                font-size: 2em;
+            }
+
+            .thought-section h2 {
+                font-size: 1.8em;
+            }
+
+            .thought-section p {
+                font-size: 1.3em;
+            }
         }
 
     </style>
@@ -73,44 +133,62 @@
 
 <body>
 
-    <div class="container text-center">
-        <div class="greeting-card">
-            <h1>Motivational Thought of the Day</h1>
-            <p id="thought-message" class="quote">Loading new thought...</p>
-            <button id="new-thought-btn" class="btn btn-custom">Get a New Thought</button>
+    <div class="container">
+        <!-- Greeting Section -->
+        <div class="greeting-section">
+            <h1>Welcome, Ankit!</h1>
+            <p>Start your day with this motivational thought:</p>
+        </div>
+
+        <!-- Thought of the Day Section -->
+        <div class="thought-section">
+            <div class="thought-overlay">
+                <h2>"The only way to do great work is to love what you do." – Steve Jobs</h2>
+                <p>This thought inspires us to follow our passion and make every task an enjoyable experience.</p>
+            </div>
+        </div>
+
+        <!-- Button to get another thought -->
+        <button class="btn btn-custom" onclick="changeThought()">Get a New Thought</button>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2025 Motivational Quotes - All Rights Reserved</p>
         </div>
     </div>
 
-    <div class="footer">
-        <p>&copy; 2025 Your Motivational Website</p>
-    </div>
-
     <script>
-        // Function to fetch new thought from API and update the page
-        function getNewThought() {
-            const url = "https://zenquotes.io/api/random"; // ZenQuotes API URL
+        // Array of thoughts
+        const thoughts = [
+            {
+                quote: "The only way to do great work is to love what you do.",
+                author: "Steve Jobs",
+                imageUrl: "https://www.w3schools.com/w3images/forest.jpg", // Image related to passion and work
+                description: "This thought inspires us to follow our passion and make every task an enjoyable experience."
+            },
+            {
+                quote: "Believe in yourself and all that you are.",
+                author: "Christian D. Larson",
+                imageUrl: "https://www.w3schools.com/w3images/mountains.jpg", // Image related to belief
+                description: "Self-belief is the key to achieving anything you set your mind to."
+            },
+            {
+                quote: "Success is not the key to happiness. Happiness is the key to success.",
+                author: "Albert Schweitzer",
+                imageUrl: "https://www.w3schools.com/w3images/snow.jpg", // Image related to happiness and success
+                description: "True success comes when you are happy with what you're doing."
+            }
+        ];
 
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    // Get the quote text from the API response
-                    const quote = data[0].q;
-                    const author = data[0].a;
+        // Function to change the thought on button click
+        function changeThought() {
+            const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)];
 
-                    // Update the page with the new quote
-                    document.getElementById("thought-message").innerHTML = `"${quote}" <br> - ${author}`;
-                })
-                .catch(error => {
-                    // In case of error, show a fallback message
-                    document.getElementById("thought-message").innerHTML = "Oops! Something went wrong.";
-                });
+            // Update thought of the day with a random quote and image
+            document.querySelector(".thought-section h2").innerHTML = `"${randomThought.quote}" – ${randomThought.author}`;
+            document.querySelector(".thought-section p").innerHTML = randomThought.description;
+            document.querySelector(".thought-section").style.backgroundImage = `url('${randomThought.imageUrl}')`;
         }
-
-        // Call function to display a quote on page load
-        window.onload = getNewThought;
-
-        // Add event listener to the button to fetch a new thought on click
-        document.getElementById("new-thought-btn").addEventListener("click", getNewThought);
     </script>
 
     <!-- Bootstrap JS and dependencies -->
