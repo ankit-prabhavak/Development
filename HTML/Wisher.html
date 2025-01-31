@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Website</title>
+    <title>Inspirational Thoughts</title>
     
     <!-- Google Font: Poppins for Clean Design -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -13,18 +13,21 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* General styling for body */
+        /* General body styling */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9; /* Light background color */
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         /* Header navigation bar */
         nav {
-            background-color: #333;
-            padding: 10px 0;
+            background-color: #2c3e50;
+            padding: 15px 0;
         }
 
         nav a {
@@ -35,75 +38,85 @@
         }
 
         nav a:hover {
-            background-color: #ff5733; /* Accent color for hover */
+            background-color: #e74c3c; /* Accent color for hover */
             border-radius: 5px;
         }
 
         /* Main section styling */
         .main-section {
-            background: linear-gradient(135deg, #ffffff, #f0f8ff);
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
             padding: 100px 0;
             text-align: center;
+            flex-grow: 1;
         }
 
         .main-section h1 {
-            font-size: 3em;
-            color: #333;
+            font-size: 3.5em;
             font-weight: 600;
+            margin-bottom: 20px;
         }
 
         .main-section p {
-            font-size: 1.2em;
-            color: #666;
+            font-size: 1.5em;
             margin-top: 20px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* Features Section */
-        .features {
-            padding: 60px 0;
-            text-align: center;
+        /* Thought Section */
+        .thought-section {
+            padding: 50px 20px;
             background-color: #fff;
-        }
-
-        .feature-card {
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            margin-bottom: 30px;
             border-radius: 10px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            transition: all 0.3s ease;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+        .thought-section h2 {
+            font-size: 2.2em;
+            color: #ff5733; /* Accent color for thoughts */
         }
 
-        .feature-card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .feature-card h3 {
-            font-size: 1.8em;
-            color: #333;
+        .thought-section p {
+            font-size: 1.2em;
+            color: #555;
+            font-style: italic;
             margin-top: 15px;
         }
 
-        .feature-card p {
-            font-size: 1em;
-            color: #777;
+        /* Button Styling */
+        .btn-refresh {
+            background-color: #ff5733; /* Accent color */
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            border: none;
+            margin-top: 30px;
+            transition: all 0.3s ease;
         }
 
-        /* Footer Section */
+        .btn-refresh:hover {
+            background-color: #e74c3c;
+            cursor: pointer;
+        }
+
+        /* Footer Styling */
         footer {
-            background-color: #333;
+            background-color: #2c3e50;
             color: #fff;
             text-align: center;
             padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
 
         footer a {
@@ -113,7 +126,7 @@
         }
 
         footer a:hover {
-            color: #ff5733;
+            color: #e74c3c;
         }
 
         /* Responsive Design */
@@ -122,12 +135,12 @@
                 font-size: 2.5em;
             }
 
-            .main-section p {
-                font-size: 1.1em;
+            .thought-section h2 {
+                font-size: 1.8em;
             }
 
-            .feature-card {
-                margin-bottom: 30px;
+            .thought-section p {
+                font-size: 1.1em;
             }
         }
     </style>
@@ -138,7 +151,7 @@
     <!-- Header with Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">My Portfolio</a>
+            <a class="navbar-brand" href="#">Inspiring Thoughts</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -149,7 +162,7 @@
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
+                        <a class="nav-link" href="#thoughts">Thoughts</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -161,52 +174,61 @@
 
     <!-- Main Section with Introductory Text -->
     <div class="main-section">
-        <h1>Welcome to My Professional Website</h1>
+        <h1>Welcome to Your Daily Inspiration</h1>
         <p>
-            This is where your creativity and innovation meet technology. Explore the features I have to offer and let’s
-            create something amazing together.
+            Let these motivating thoughts guide your day. Stay inspired, stay positive, and keep pushing forward.
         </p>
     </div>
 
-    <!-- Features Section -->
-    <div id="features" class="features">
-        <div class="container">
-            <h2 class="mb-5">What I Offer</h2>
-            <div class="row">
-                <!-- Feature Card 1 -->
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <img src="https://via.placeholder.com/400x250" alt="Service 1">
-                        <h3>Web Development</h3>
-                        <p>Building responsive, user-friendly websites tailored to your business needs.</p>
-                    </div>
-                </div>
-                <!-- Feature Card 2 -->
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <img src="https://via.placeholder.com/400x250" alt="Service 2">
-                        <h3>UI/UX Design</h3>
-                        <p>Designing intuitive, clean, and visually appealing user interfaces and experiences.</p>
-                    </div>
-                </div>
-                <!-- Feature Card 3 -->
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <img src="https://via.placeholder.com/400x250" alt="Service 3">
-                        <h3>SEO Optimization</h3>
-                        <p>Improving your website’s visibility and search engine ranking to drive more traffic.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Thought Section -->
+    <div id="thoughts" class="thought-section">
+        <h2>"The only way to do great work is to love what you do." – Steve Jobs</h2>
+        <p>This thought inspires us to follow our passion and make every task an enjoyable experience.</p>
+
+        <!-- Button to Refresh Thought -->
+        <button class="btn-refresh" onclick="getNewThought()">Get a New Thought</button>
     </div>
 
     <!-- Footer Section -->
     <footer id="contact">
-        <p>&copy; 2025 My Portfolio. All Rights Reserved. | <a href="mailto:contact@portfolio.com">Contact Me</a></p>
+        <p>&copy; 2025 Inspirational Thoughts | All Rights Reserved. | <a href="mailto:contact@thoughts.com">Contact Us</a></p>
     </footer>
 
-    <!-- Bootstrap JS & dependencies -->
+    <!-- JavaScript to Change Thoughts -->
+    <script>
+        const thoughts = [
+            {
+                quote: "The only way to do great work is to love what you do.",
+                author: "Steve Jobs",
+                description: "This thought inspires us to follow our passion and make every task an enjoyable experience."
+            },
+            {
+                quote: "Believe in yourself and all that you are.",
+                author: "Christian D. Larson",
+                description: "Self-belief is the key to achieving anything you set your mind to."
+            },
+            {
+                quote: "Success is not the key to happiness. Happiness is the key to success.",
+                author: "Albert Schweitzer",
+                description: "True success comes when you are happy with what you're doing."
+            },
+            {
+                quote: "You miss 100% of the shots you don’t take.",
+                author: "Wayne Gretzky",
+                description: "Taking risks and stepping out of your comfort zone are essential for growth and success."
+            }
+        ];
+
+        function getNewThought() {
+            const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)];
+
+            // Update the thought section
+            document.querySelector(".thought-section h2").textContent = `"${randomThought.quote}" – ${randomThought.author}`;
+            document.querySelector(".thought-section p").textContent = randomThought.description;
+        }
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
