@@ -6,53 +6,120 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>To My Dearest Somaya</title>
   <style>
+    /* Global styles */
     body {
       font-family: 'Arial', sans-serif;
-      background: #ffe6f1;
+      background: #f8f1f7;
       color: #333;
-      text-align: center;
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
+      height: 100vh;
     }
 
     header {
       background: #ff66b2;
-      padding: 20px 0;
+      padding: 30px 0;
+      text-align: center;
+      border-bottom: 5px solid #ff3385;
     }
 
     header h1 {
       color: white;
-      font-size: 3em;
+      font-size: 3.5em;
       margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     section {
-      padding: 50px 20px;
+      padding: 60px 20px;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
     }
 
+    /* Love message box */
     .love-message {
-      font-size: 1.5em;
-      line-height: 1.6;
-      max-width: 800px;
+      font-size: 1.3em;
+      line-height: 1.8;
+      max-width: 900px;
       margin: 0 auto;
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      border-radius: 15px;
+      padding: 40px 50px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
     }
 
+    .love-message p {
+      margin: 20px 0;
+    }
+
+    /* Hearts animation */
     .heart {
       color: #ff66b2;
-      font-size: 2em;
+      font-size: 3em;
+      animation: pulse 1s infinite;
     }
 
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Plants & leaf animation */
+    .plant {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.8);
+      width: 120px;
+      height: 120px;
+      background-image: url('https://www.pngitem.com/pimgs/m/21-217533_plant-leaf-clip-art-png-download-png-clipart.png');
+      background-size: cover;
+      animation: floatPlant 7s infinite ease-in-out;
+    }
+
+    @keyframes floatPlant {
+      0% {
+        transform: translateY(0) scale(0.8);
+      }
+      50% {
+        transform: translateY(-20px) scale(1);
+      }
+      100% {
+        transform: translateY(0) scale(0.8);
+      }
+    }
+
+    .plant:nth-child(2) {
+      left: 30%;
+      animation: floatPlant 8s infinite ease-in-out;
+    }
+
+    .plant:nth-child(3) {
+      left: 70%;
+      animation: floatPlant 9s infinite ease-in-out;
+    }
+
+    /* Footer styling */
     footer {
       background: #ff66b2;
       color: white;
       padding: 20px 0;
+      text-align: center;
       position: fixed;
       bottom: 0;
       width: 100%;
+      font-size: 1.2em;
     }
 
     footer p {
@@ -60,7 +127,7 @@
     }
 
     .cta {
-      font-size: 1.2em;
+      font-size: 1.3em;
       font-weight: bold;
       color: #ff66b2;
     }
@@ -68,6 +135,28 @@
     .cta:hover {
       text-decoration: underline;
     }
+
+    /* Background decorations */
+    .heart-container {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -77,29 +166,38 @@
 </header>
 
 <section>
+  <!-- Floating hearts animation -->
+  <div class="heart-container">
+    <span class="heart">❤️</span>
+  </div>
+
   <div class="love-message">
-    <p>My love,</p>
+    <p>My Love,</p>
     <p>
-      I’m sitting here thinking about how amazing you are and how lucky I am to have you in my life. 
-      You light up my world in ways I never thought possible. Every moment spent with you is a treasure I hold dear.
+      As I sit here thinking of you, my heart fills with an overwhelming sense of love and gratitude. I am so lucky to have you in my life. You are the light that brightens my world, the joy that fills my heart, and the love that makes every day special.
     </p>
     <p>
-      On this Valentine’s Day, I want to remind you how incredibly special you are to me. You’re the reason for my happiness, the source of my laughter, and the one who fills my heart with warmth and love. 💖
+      On this Valentine's Day, I want to remind you of just how incredibly precious you are to me. Your smile, your laughter, your kindness—everything about you makes my world better. 💖
     </p>
     <p>
-      Thank you for being you—for being the most beautiful, caring, intelligent, and inspiring person I know. I am grateful every single day to have you by my side.
+      Thank you for being my love, my best friend, and my partner. You make my life full of beautiful moments, and I can’t wait to share even more adventures with you. I promise to cherish you always.
     </p>
     <p>
-      I love you more than words can express. I can’t wait to continue creating unforgettable memories with you. You are my forever and always. 💕
+      I love you more than words could ever express. You are my forever, and I will love you for all my days. 💕
     </p>
     <p class="heart">❤️</p>
   </div>
-  
+
   <p class="cta">
     Always yours,
     <br>
     [Your Name]
   </p>
+
+  <!-- Floating Plants -->
+  <div class="plant"></div>
+  <div class="plant"></div>
+  <div class="plant"></div>
 </section>
 
 <footer>
