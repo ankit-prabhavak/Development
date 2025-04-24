@@ -202,5 +202,7 @@ counterFunc();  // 1
 counterFunc();  // 2
 25. Refactoring and Debugging
 Refactoring involves improving code without changing its functionality.
-Debugging involves identifying and resolving errors in code. Modern IDEs and browser developer tools provide useful debugging features.
+Debugging involves identifying and resolving errors in code. Modern IDEs and browser developer to provide useful debugging features.
 These are the key concepts and patterns in JavaScript at an intermediate level. By understanding these principles, you can write more efficient, organized, and maintainable JavaScript code.
+
+

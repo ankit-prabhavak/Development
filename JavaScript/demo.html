@@ -41,10 +41,16 @@
     let diff = x - y; // Subtraction
     let product = x * y; // Multiplication
     let quotient = x / y; // Division
-    let remainder = x % y; // Modulus
+    let remainder = x % y; // Modulus 
     let exponent = x ** 2; // Exponentiation
     let increment = ++x; // Increment
     let decrement = --y; // Decrement
+    let h = BigInt("124589632254785221366558");
+    let sum2 = h + x;
+    
+    document.getElementById("second").innerHTML += ("<br>New Sum Big: " + sum2); 
+    
+
 
     document.getElementById("second").innerHTML += ("<br>Sum: " + sum + "<br>Difference: " + diff + "<br>Product: " + product + "<br>Quotient: " + quotient + "<br>Remainder: " + remainder + "<br>Exponent: " + exponent + "<br>Increment: " + increment + "<br>Decrement: " + decrement);
 </script>
