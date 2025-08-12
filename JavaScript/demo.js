@@ -26,6 +26,32 @@ let exponent = x ** 2; // Exponentiation
 let increment = ++x; // Increment
 let decrement = --y; // Decrement
 
+let temp = 16 + 16 + "Volo";
+console.log(temp); // 32Volo
+console.log('hello dear "Anand" sir!');
 console.log(quotient);
+
+
+let ana = 7;
+
+if (ana % 2 == 0) {
+    console.log("Even Number");
+}
+else {  
+    console.log("Odd Number");
+}
+
+
+// nested if else statement
+
+let age = 18;
+if(age >= 18) {
+    console.log("You are eligible to vote");
+}
+else if(age < 18 && age > 0) {
+    console.log("You are not eligible to vote");
+}else {
+    console.log("Invalid age");
+}
 
 

@@ -1,0 +1,23 @@
+CSS - Cascading Style Sheet
+
+The meaning of Cascading in CSS is that the styles are applied in a cascading manner, meaning that the styles are applied in a
+hierarchical order. The styles are applied from the most specific to the least specific.
+
+Order: In Line Styles > Internal Styles > External Styles 
+
+This order is very helpful in resolving conflicts between styles.
+
+
+!Important is a keyword which is used to override the normal cascading order of CSS. It is used to set the priority of styles to higher than the 
+normal styles.
+
+<strong> is a tag used to produce audio as well as visual effect.
+
+
+Advantages of TypeScript over JavaScript:
+
+1.  Static Typing: TypeScript is statically typed, which means that the type of every expression must be specified.
+2.  Intelligent Code Completion: TypeScript provides intelligent code completion, which helps in writing code faster and with fewer errors.
+
+Duck Typing: Duck typing is a concept in programming where the type of an object is determined by the methods it supports, 
+rather than the type of the object itself.
