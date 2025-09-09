@@ -1,15 +1,24 @@
-var http = require('http');
+// var http = require('http');
 
-var server = http.createServer(function(req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('Hello, World!');
-}).listen(8080);
+// var server = http.createServer(function(req, res) {
+//     res.writeHead(200, {'Content-Type': 'text/html'});
+//     res.end('Hello, World!');
+// }).listen(8080);
+
+
+
+
+const _ = require('lodash');
+
+const inputString = process.argv.slice(2).join(' '); // Get input from command line arguments
+// Convert the input string to camel case
+
+const capitalizedString = _.capitalize(inputString);
+
+console.log(capitalizedString); // Output the camel case string
 
 
 // console.log('Server running at http://localhost:8080/');
-
-
-
 
 // Takeaways:// This code creates a simple HTTP server using Node.js that listens on port 8080 and responds with "Hello, World!" 
 // when accessed.
@@ -30,3 +39,11 @@ var server = http.createServer(function(req, res) {
 // 200 OK is a status code indicating that the request has succeeded and the server is returning the requested data.
 
 // There are 65536 ports available for use in TCP/IP networking, ranging from 0 to 65535.
+
+
+// package.json : 
+// The package.json file in Node.js is a JSON-formatted file located at the root of a Node.js project. 
+// It serves as a manifest for the project, containing essential metadata and functional information that the Node Package Manager (npm) uses to manage the project.
+
+/*NPM, or Node Package Manager, is the default package manager for Node.js. 
+It is a fundamental tool for JavaScript development, particularly within the Node.js ecosystem. */

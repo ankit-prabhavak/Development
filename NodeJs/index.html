@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Client Application</title>
+    <style>
+
+        h1{
+            color: #333;
+            font-family: cursive;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form{
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            font-family: cursive;
+
+        }
+
+        .box{
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>First example</h1>
+
+       <form action="http://127.0.0.1:8000/process_post" method="POST">
+             
+             <label for="fname">First Name</label>
+             <input type="text" id="fname" name="first_name" required><br><br>
+             <label for="lname">Last Name</label>
+             <input type="text" id="lname" name="last_name" required><br>
+
+             <input type="submit" value="Submit">
+      </form>
+    </div>
+    
+    
+</body>
+</html>
+
+
+<!-- What is routing ?
+Routing is the fundamental process of selecting the most efficient path for data packets to travel from a source 
+to a destination across a network.
+-->
+
+<!-- GET AND POST METHODS:
+GET and POST are two of the most commonly used HTTP methods for sending and receiving data between a client and a server.
+GET is used to request data from a specified resource, while POST is used to submit data to be processed to a specified resource.
+POST is generally used when you need to send data that will change the state of the server or when you need to send large amounts of data,
+while GET is used for retrieving data without changing the server's state. 
+-->
+
+<!-- What is Express: 
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features for building web and mobile 
+applications.
+-->
+
+<!-- REST API:
+It stands for Representational State Transfer Application Programming Interface. It is a set of rules and conventions for building and
+interacting with web services. REST APIs use standard HTTP methods (like GET, POST, PUT, DELETE) and are designed to be stateless,
+meaning each request from a client to a server must contain all the information needed to understand and process the request. 
+-->
