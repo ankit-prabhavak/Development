@@ -1,0 +1,6 @@
+NodeJs/node_modules/
+
+NodeJs/package-lock.json
+NodeJs/.vscode/
+NodeJs/.DS_Store
+NodeJs/package.json
