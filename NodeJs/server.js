@@ -28,3 +28,8 @@ var server = app.listen(8000, () => {
 
     console.log("Example app listening at http://%s:%s", host, port);
 });
+
+
+async function getData(pa) {
+    
+}
